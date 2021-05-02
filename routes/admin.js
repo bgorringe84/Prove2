@@ -10,7 +10,7 @@ const books = [];
 // middleware for the add-book page
 router.get('/add-book', (req, res, next) => {
    console.log('In the \'add-book\' middleware');
-   res.sendFile(path.join(rootDir, 'views', 'add-book.html'));
+   res.render('add-book', { pageTitle: 'Add Book'});
 });
 
 // executes the /book form action

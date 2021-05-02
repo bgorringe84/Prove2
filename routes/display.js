@@ -8,8 +8,7 @@ const router = express.Router();
 
 // middleware for the display books page
 router.get('/', (req, res, next) => {
-   console.log('display.js', adminData.books);
-   res.sendFile(path.join(rootDir, 'views', 'display.html'));
+   res.render('display', {bks: adminData.books, pageTitle: 'Books'});
 });
 
 module.exports = router;
