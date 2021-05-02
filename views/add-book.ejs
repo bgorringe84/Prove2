@@ -1,30 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title><%= pageTitle %></title>
-   <link rel="stylesheet" href="/css/main.css">
+<%- include('includes/head.ejs') %>
    <link rel="stylesheet" href="/css/book.css">
+   <link rel="stylesheet" href="/css/card.css">
 </head>
 <body>
-   <header class="main-header">
-      <nav class="main-header__nav">
-         <ul class="main-header__item-list">
-            <li class="main-header__item"><a href="/">Books</a></li>
-            <li class="main-header__item"><a class="active" href="/admin/add-book">Add Book</a></li>
-         </ul>
-      </nav>
-   </header>
-
-
-   <form class="book-form" action="/admin/add-book" method="POST">
-      <div class="form-control">
-      <label for="title">Book Title:</label>
-      <input type="text" name="title" id="title">
-      </div>
-      <button class="btn" type="submit">Add Book</button>
-   </form>
-</body>
-</html>
+   <%- include('includes/navigation.ejs') %>
+   <main>
+      <form class="book-form" action="/admin/add-book" method="POST">
+         <div class="form-control">
+         <label for="title">Book Title:</label>
+         <input type="text" name="title" id="title">
+         <label for="author">Author:</label>
+         <input type="text" name="author" id="author">
+         <label for="description">Description:</label>
+         <input type="text" name="description" id="description"> 
+         </div>
+         <button class="btn" type="submit">Add Book</button>
+      </form>
+      </main>
+<%- include('includes/end.ejs') %>

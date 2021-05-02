@@ -19,7 +19,7 @@ app.use('/admin', adminData.routes);
 app.use(displayRouts);
 //404 page
 app.use((req, res, next) => {
-   res.status(404).render('404', {pageTitle: 'Page Not Found'});
+   res.status(404).render('404', {pageTitle: 'Page Not Found', path: 'unknown'});
 });
 
 app.listen(app.get("port"), () => console.log("server is listening on port " + app.get("port")));

@@ -10,12 +10,15 @@ const books = [];
 // middleware for the add-book page
 router.get('/add-book', (req, res, next) => {
    console.log('In the \'add-book\' middleware');
-   res.render('add-book', { pageTitle: 'Add Book'});
+   res.render('add-book', {
+      pageTitle: 'Add Book',
+      path: 'admin/add-book'
+   });
 });
 
 // executes the /book form action
 router.post('/add-book', (req, res, next) => {
-   books.push({title: req.body.title});
+   books.push(req.body);
    res.redirect('/');
 });
 
